@@ -34,4 +34,4 @@ jobs:
         git config --global user.email $user_email
         git remote set-url origin https://${GITHUB_TOKEN}@github.com/${repository}
         npm install
-        npm run ng --deploy --base-href=https://sukumarc.github.io/angular-app-actions/ --no-silent
+        npm run ng -- deploy --base-href=https://sukumarc.github.io/angular-app-actions/ --no-silent
