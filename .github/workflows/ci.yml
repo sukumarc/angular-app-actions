@@ -28,10 +28,11 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
        # github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        access_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote set-url origin https://${GITHUB_TOKEN}@github.com/${repository}
+        git remote set-url origin https://${access_token}@github.com/${repository}
         npm install
         npm run ng -- deploy --base-href=https://sukumarc.github.io/angular-app-actions/ --no-silent
